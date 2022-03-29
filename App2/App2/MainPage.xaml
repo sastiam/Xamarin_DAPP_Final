@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage"
+             BackgroundImage="https://wallpapercave.com/dwp1x/wp5288680.jpg"
+             >
+    <StackLayout>
+        <Image
+            x:Name="logoSenati"
+           Source="https://campusonline.senati.edu.pe/cronogramas/201920/assets/images/logo-192x168.png"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            WidthRequest="300"
+            HeightRequest="300"
+        >
+            
+        </Image>
+    </StackLayout>
+
+</ContentPage>

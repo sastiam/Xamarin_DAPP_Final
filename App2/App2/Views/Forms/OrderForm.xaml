@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.Forms.OrderForm">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical"
+                         Spacing="0"
+                         Padding="0"
+                         BackgroundColor="Blue">
+                <BoxView HorizontalOptions="FillAndExpand"
+                         HeightRequest="50"
+                         VerticalOptions="Start"
+                         Color="Blue"/>
+                <StackLayout
+                    HeightRequest="170"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="20"
+                    BackgroundColor="White">
+                    <Label  Text=".:: Orden de producto ::."
+                            FontSize="20"
+                            TextColor="Blue"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"/>
+                    <Image  Source="https://campusonline.senati.edu.pe/cronogramas/201920/assets/images/logo-192x168.png"  
+                                HeightRequest="100"
+                                WidthRequest="100"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                             HeightRequest="50"
+                             BackgroundColor="Gray"
+                             Padding="25,25,25,10">
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Start">
+                        <BoxView BackgroundColor="Blue"
+                                 WidthRequest="40"
+                                 HeightRequest="40"
+                                 CornerRadius="20"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Center"/>
+                        <Image x:Name="imgarticulo"
+                               WidthRequest="50"
+                               HeightRequest="50"/>
+                    </StackLayout>
+
+                    <StackLayout Spacing="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand">
+                        <BoxView BackgroundColor="Maroon"
+                                 WidthRequest="40"
+                                 HeightRequest="40"
+                                 CornerRadius="20"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Center"/>
+                        <Label FontSize="14"
+                               TextColor="White"
+                               Text="Ingrese Cantidad:"
+                               Margin="10,0"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center"
+                               />
+                        <Picker x:Name="cmbstock"
+                                TextColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                SelectedItem="{Binding cmbstock, Mode=TwoWay}"
+                                >
+                            <Picker.Items>
+                                <x:String>
+                                    [Seleccion..]
+                                </x:String>
+                            </Picker.Items>
+
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                             HeightRequest="50"
+                             BackgroundColor="Gray"
+                             Padding="25,0,0,10">
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Start">
+                        <Label FontSize="16"
+                               Text="Descripcion del Articulo:"
+                               TextColor="White"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                               WidthRequest="200"/>
+
+                        <Editor x:Name="txtdescripcion"
+                                TextColor="White"
+                                WidthRequest="200"
+                                Keyboard="Plain"
+                                AutoSize="TextChanges"
+                                MaxLength="180"
+                                FontSize="12"
+                                IsEnabled="False"
+                                HeightRequest="300"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                             HeightRequest="50"
+                             BackgroundColor="Gray"
+                             Padding="25,0,0,10">
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Start">
+                        <Label FontSize="16"
+                               Text="Total productos"
+                               TextColor="White"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                               WidthRequest="200"/>
+
+                        <Editor x:Name="txttotalproductos"
+                                TextColor="White"
+                                WidthRequest="200"
+                                Keyboard="Plain"
+                                AutoSize="TextChanges"
+                                MaxLength="180"
+                                FontSize="12"
+                                IsEnabled="False"
+                                HeightRequest="300"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+
+                <Button 
+                    x:Name="btnSend"
+                    Margin="0,50,0,50"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontFamily="verdana"
+                    BackgroundColor="Black"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    BorderRadius="80"
+                    Text="Agregar al Carrito"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Command="{Binding AgregarProducto}"
+                    IsEnabled="{Binding isEnabled}"
+                    />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.PopupWindow"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     WidthRequest="300"
+                     HeightRequest="250"
+                     BackgroundColor="Black"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Image x:Name="img"
+                   Aspect="AspectFit"
+                   HeightRequest="240"
+                   WidthRequest="290"/>
+            <Label x:Name="title" 
+                   TextColor="White">
+
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</popup:PopupPage>

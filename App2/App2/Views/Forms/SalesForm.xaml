@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.Forms.SalesForm">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical"
+                         Spacing="0"
+                         Padding="0"
+                         BackgroundColor="Blue">
+                <BoxView HorizontalOptions="FillAndExpand"
+                         HeightRequest="50"
+                         VerticalOptions="Start"
+                         Color="Blue"/>
+                <StackLayout
+                    HeightRequest="170"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="20"
+                    BackgroundColor="White">
+                    <Label  Text=".:: Formulario de Venta ::."
+                            FontSize="20"
+                            TextColor="Blue"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"/>
+                    <Image  Source="https://campusonline.senati.edu.pe/cronogramas/201920/assets/images/logo-192x168.png"  
+                                HeightRequest="100"
+                                WidthRequest="100"/>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal"
+                             HeightRequest="50"
+                             BackgroundColor="Gray"
+                             Padding="25,0,0,10">
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Start">
+                        <Label FontSize="16"
+                               Text="Total de productos"
+                               TextColor="White"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                               WidthRequest="200"/>
+
+                        <Editor x:Name="txtdescripcion"
+                                TextColor="White"
+                                WidthRequest="200"
+                                Keyboard="Plain"
+                                AutoSize="TextChanges"
+                                MaxLength="180"
+                                FontSize="12"
+                                IsEnabled="False"
+                                HeightRequest="300"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                             Padding="25,0,25,0">
+                    <Label FontSize="15"
+                           Text="Nombre del Cliente: "
+                           TextColor="White"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           WidthRequest="150"/>
+                    <Entry x:Name="txtnomcli"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           Text="{Binding txtnomcli, Mode=TwoWay}"
+                           />
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Padding="25,0,25,0">
+                    <Label FontSize="15"
+                           Text="DNI del Cliente: "
+                           TextColor="White"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           WidthRequest="150"/>
+                    <Entry x:Name="txtdnicli"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           Text="{Binding txtdnicli, Mode=TwoWay}"
+                           />
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Padding="25,0,25,0">
+                    <Label FontSize="15"
+                           Text="Direccion del Cliente: "
+                           TextColor="White"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           WidthRequest="100"/>
+                    <Entry x:Name="txtdircli"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                          
+                           Text="{Binding txtdircli, Mode=TwoWay}"
+                           />
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Padding="25,0,25,0">
+                    <Label FontSize="15"
+                           Text="Telefono del Cliente: "
+                           TextColor="White"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           WidthRequest="100"/>
+                    <Entry x:Name="txttelcli"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           
+                           Text="{Binding txttelcli, Mode=TwoWay}"
+                           />
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                             Padding="25,0,25,0">
+                    <Label FontSize="15"
+                           Text="Correo del Cliente: "
+                           TextColor="White"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           WidthRequest="100"/>
+                    <Entry x:Name="txtcorreo"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           
+                           Text="{Binding txtcorreo, Mode=TwoWay}"
+                           />
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                             Padding="25,0,25,0">
+                    <Label FontSize="15"
+                           Text="Fecha de venta:"
+                           TextColor="White"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           WidthRequest="200"/>
+                    <DatePicker 
+                           x:Name="dpfecha"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                       
+                           Date="{Binding dpfecha, Mode=TwoWay}"
+                     />
+
+                </StackLayout>
+
+                <Button 
+                    x:Name="btnSend"
+                    Margin="0,50,0,50"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontFamily="verdana"
+                    BackgroundColor="Black"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    BorderRadius="80"
+                    Text="Comprar"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Command="{Binding EnviarDatos}"
+                    IsEnabled="{Binding isEnabled}"
+                    />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
